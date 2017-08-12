@@ -1,4 +1,11 @@
-(function(window, lawfight, Redux, _, $, Handlebars) {
+import {$,jQuery} from 'jquery';
+import Redux from 'redux';
+import _ from 'underscore'
+import Handlebars from 'handlebars/dist/handlebars.min.js';
+
+import {lawfight as lawfight_init} from './lawfight'
+
+    var lawfight = lawfight_init();
 
     // state control
     var state_control = function(state, action) {
@@ -108,7 +115,7 @@
                 $('#draft-body').html(template_cache['draft'](new_state['options']));
 
                 if (template_cache['options'] === undefined) {
-                    template_cache['options'] = Handlebars.compile($('#options-body').html(), {'strict': true});
+                    template_cache['options'] = Handlebars.compile($('#options-body script').html(), {'strict': true});
                 }
                 $('#options-body').html(template_cache['options'](new_state));
                 _.each(new_state['options'], function(option_value, option_name) {
@@ -131,4 +138,4 @@
         });
     })();
 
-})(window, window.lawfight, window.Redux, window._, window.$, window.Handlebars);
+//})(window, window.Redux, window._, window.$, window.Handlebars);

@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "dependencies": {
+    "jquery": "2.2.*",
+    "redux": "3.7.x",
+    "underscore": "1.8.x",
+    "handlebars": "4.0.x"
+  },
+  "devDependencies": {
+    "gulp": "3.9.x",
+    "gulp-install": "1.1.x",
+    "babel-loader": "7.x",
+    "babel-preset-es2015": "*",
+    "babel-preset-es2015-webpack": "6.4.x",
+    "browser-sync": "*",
+    "gulp-handlebars-file-include": "*",
+    "gulp-webpack": "*",
+    "webpack": "2.x"
+  },
+  "scripts": {
+    "bootstrap": "npm install gulp@3.9.x gulp-install@1.1.x && ./node_modules/.bin/gulp js-deps",
+    "start": "./node_modules/.bin/gulp"
+  }
+}
